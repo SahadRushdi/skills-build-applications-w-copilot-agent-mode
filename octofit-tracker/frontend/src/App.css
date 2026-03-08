@@ -1,0 +1,289 @@
+/* ══════════════════════════════════════
+   OctoFit Tracker — Global Theme
+══════════════════════════════════════ */
+:root {
+  --of-primary:      #0d6efd;
+  --of-primary-dark: #0a58ca;
+  --of-accent:       #20c997;   /* teal accent */
+  --of-dark:         #1a1d23;
+  --of-darker:       #12151a;
+  --of-bg:           #eef1f7;
+  --of-surface:      #ffffff;
+  --of-text:         #212529;
+  --of-text-muted:   #6c757d;
+  --of-border:       #dee2e6;
+  --of-hero-from:    #1a1d23;
+  --of-hero-to:      #0a3d6b;
+  --of-nav-bg:       #12151a;
+  --of-shadow-sm:    0 2px 8px rgba(0,0,0,.10);
+  --of-shadow-md:    0 4px 20px rgba(0,0,0,.14);
+  --of-shadow-lg:    0 8px 32px rgba(0,0,0,.18);
+  --of-radius:       12px;
+}
+
+/* ── Reset / base ── */
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background-color: var(--of-bg);
+  color: var(--of-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ── Headings ── */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--of-dark);
+  letter-spacing: -0.2px;
+}
+
+/* ── Links ── */
+a {
+  color: var(--of-primary);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+a:hover {
+  color: var(--of-primary-dark);
+  text-decoration: underline;
+}
+
+/* ══════════════════════
+   NAVBAR
+══════════════════════ */
+.navbar.bg-dark {
+  background-color: var(--of-nav-bg) !important;
+  border-bottom: 3px solid var(--of-accent);
+  box-shadow: var(--of-shadow-md);
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.4px;
+  color: #fff !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-logo {
+  height: 36px;
+  width: 36px;
+  object-fit: contain;
+  border-radius: 6px;
+  border: 2px solid var(--of-accent);
+  background: #fff;
+  padding: 1px;
+}
+
+.navbar .nav-link {
+  color: rgba(255,255,255,.80) !important;
+  font-weight: 500;
+  padding: 0.5rem 0.85rem !important;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.navbar .nav-link:hover {
+  color: #fff !important;
+  background: rgba(255,255,255,.10);
+}
+
+.navbar .nav-link.active {
+  color: #fff !important;
+  font-weight: 700;
+  background: var(--of-primary);
+}
+
+/* ══════════════════════
+   HERO SECTION
+══════════════════════ */
+.octofit-hero {
+  background: linear-gradient(135deg, var(--of-hero-from) 0%, var(--of-hero-to) 100%);
+  color: #fff;
+  padding: 5rem 1rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.octofit-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(32,201,151,.18) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.octofit-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,.4);
+}
+
+.octofit-hero .lead {
+  font-size: 1.2rem;
+  opacity: 0.88;
+  color: #fff;
+}
+
+/* ══════════════════════
+   FEATURE CARDS (home)
+══════════════════════ */
+.feature-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: none;
+  border-radius: var(--of-radius);
+  box-shadow: var(--of-shadow-sm);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--of-shadow-lg);
+}
+
+.feature-card .card-header {
+  border-radius: var(--of-radius) var(--of-radius) 0 0 !important;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+}
+
+.feature-card .card-body {
+  background: var(--of-surface);
+  border-radius: 0 0 var(--of-radius) var(--of-radius);
+}
+
+.feature-card .card-text {
+  color: var(--of-text-muted);
+}
+
+/* ── Buttons ── */
+.btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: filter 0.15s, transform 0.1s, box-shadow 0.15s;
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+}
+
+.btn-outline-primary {
+  border-color: var(--of-primary);
+  color: var(--of-primary);
+}
+.btn-outline-primary:hover {
+  background-color: var(--of-primary);
+  color: #fff;
+}
+
+/* ══════════════════════
+   DATA TABLE CARDS
+══════════════════════ */
+.data-card {
+  border: none;
+  border-radius: var(--of-radius);
+  box-shadow: var(--of-shadow-sm);
+  overflow: hidden;
+}
+
+.data-card .card-header {
+  border-radius: 0 !important;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 0.85rem 1.25rem;
+  letter-spacing: 0.2px;
+}
+
+.data-card .card-body {
+  padding: 0;
+  background: var(--of-surface);
+}
+
+/* ── Table overrides ── */
+.data-card .table {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+.data-card .table thead.table-dark th {
+  background-color: var(--of-darker);
+  color: var(--of-accent);
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  border-color: #2a2d35;
+  padding: 0.75rem 1rem;
+  white-space: nowrap;
+}
+
+.data-card .table tbody tr {
+  transition: background 0.12s;
+}
+
+.data-card .table tbody tr:hover {
+  background-color: rgba(13,110,253,.06) !important;
+}
+
+.data-card .table td {
+  padding: 0.7rem 1rem;
+  vertical-align: middle;
+  border-color: var(--of-border);
+  color: var(--of-text);
+}
+
+.data-card .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.025);
+}
+
+/* ── Badges ── */
+.badge {
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  padding: 0.38em 0.65em;
+  border-radius: 6px;
+}
+
+/* ══════════════════════
+   SPINNER
+══════════════════════ */
+.spinner-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3.5rem 0;
+}
+
+/* ══════════════════════
+   LEADERBOARD MEDALS
+══════════════════════ */
+.rank-medal {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+/* ══════════════════════
+   FOOTER
+══════════════════════ */
+footer.bg-dark {
+  background-color: var(--of-darker) !important;
+  border-top: 2px solid var(--of-accent);
+  color: rgba(255,255,255,.65);
+  font-size: 0.85rem;
+}
+
+/* ══════════════════════
+   ALERTS
+══════════════════════ */
+.alert {
+  border-radius: 8px;
+  font-size: 0.92rem;
+}
